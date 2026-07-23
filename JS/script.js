@@ -375,19 +375,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Global Checkout Click Event Handler (Delegated for 100% reliability)
+    // Cart Checkout Trigger: Redirects to checkout page with updated order details
     document.addEventListener('click', function(e) {
         const checkoutTarget = e.target.closest('#checkoutBtn, .checkout-btn, .btn-checkout, [data-action="checkout"]');
         if (checkoutTarget) {
             e.preventDefault();
             e.stopPropagation();
 
+            let currentCart = [];
+            try {
+                currentCart = JSON.parse(localStorage.getItem('bookcase_cart')) || [];
+            } catch(err) { currentCart = cart || []; }
+
+            if (!currentCart || currentCart.length === 0) {
+                showToast('Your cart is empty! Add books to proceed to checkout.', 'info');
+                return;
+            }
+
+            // Save updated order details
+            saveCart();
+
             if (cartOverlay) cartOverlay.classList.remove('open');
             document.body.style.overflow = '';
 
-            const isSubpage = window.location.pathname.includes('/pages/');
-            const targetPage = isSubpage ? 'checkout.html' : 'pages/checkout.html';
-            window.location.href = targetPage;
+            showToast('Redirecting to checkout with your order...', 'success');
+            setTimeout(() => {
+                const isSubpage = window.location.pathname.includes('/pages/');
+                const targetPage = isSubpage ? 'checkout.html' : 'pages/checkout.html';
+                window.location.href = targetPage;
+            }, 300);
         }
     });
 
