@@ -210,9 +210,11 @@ body.gsap-ready [data-reveal]:not(.revealed) {
 /* ══════════════════════════════════════════════════════════════════════════
    STATIC LUXURY HEADER (Appears at top of page in document flow)
 ══════════════════════════════════════════════════════════════════════════ */
-#header {
+header, #header {
     position: static !important;
     width: 100% !important;
+    top: auto !important;
+    left: auto !important;
     background: rgba(8, 14, 11, 0.96);
     backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
     border-bottom: 1.5px solid rgba(212, 160, 23, 0.28);
@@ -1517,9 +1519,11 @@ body.dark-mode .dark-mode-thumb-small { transform: translateX(20px); }
 
 /* ── Mobile Devices & Portrait Tablets (768px and below) ───────────────── */
 @media (max-width: 768px) {
-    #header {
+    header, #header {
         position: static !important;
         width: 100% !important;
+        top: auto !important;
+        left: auto !important;
         border-radius: 0;
     }
     .hero {
