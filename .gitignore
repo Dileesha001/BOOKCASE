@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+server/node_modules/
+
+# Environment & Secret files
+.env
+.env.local
+.env.*
+server/.env
+server/atlas-credentials.env
+
+# System / OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+server/logs/

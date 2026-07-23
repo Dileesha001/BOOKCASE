@@ -1,0 +1,39 @@
+/* ==========================================================================
+   BOOKCASE – Dark Mode Overrides (Emerald & Gold Theme)
+   ========================================================================== */
+
+body.dark-mode {
+    background: #050c08;
+    background-image:
+        radial-gradient(ellipse 80% 60% at 10% 0%,   rgba(16,185,129,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 90% 100%, rgba(16,185,129,0.06) 0%, transparent 55%);
+}
+
+body.dark-mode #wrapper {
+    background-color: rgba(6,13,10,0.96);
+}
+
+body.dark-mode #header { background: rgba(4,10,7,0.98); }
+
+/* deeper emerald card tones in dark mode */
+body.dark-mode .subcat,
+body.dark-mode .catagories,
+body.dark-mode .Subsec,
+body.dark-mode .trust-bar,
+body.dark-mode .payements,
+body.dark-mode .contact-section {
+    background: rgba(6,13,10,0.85);
+}
+
+body.dark-mode .box2 { background: #0c1812; border-color: rgba(212,160,23,0.18); }
+body.dark-mode .box2:hover { background: #112219; border-color: #d4a017; box-shadow: 0 16px 40px rgba(212,160,23,0.25); }
+body.dark-mode .box2 h6 { background: rgba(212,160,23,0.12); border: 1px solid rgba(212,160,23,0.25); color: #f5c842; }
+body.dark-mode .box  { background: rgba(16,185,129,0.02); }
+
+body.dark-mode .contact-form { background: rgba(4,10,7,0.6); }
+body.dark-mode .cart-drawer  { background: #08120c; }
+body.dark-mode .modal-container { background: #0a160f; }
+body.dark-mode .toast { background: #0e1e15; }
+
+/* Toggle thumb moved to right in dark mode */
+body.dark-mode .dark-mode-thumb-small { transform: translateX(20px); }
